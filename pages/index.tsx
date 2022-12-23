@@ -1,11 +1,61 @@
+import React,{useState} from 'react'
 import Head from 'next/head'
-import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
-
+import Navbar from '../components/Navbar'
+import SectionDivider from '../components/SectionDivider'
+import Vitrine from '../components/Vitrine'
+import Presentation from '../components/Presentation'
+import Slider from '../components/Slider'
+import Shelf from '../components/Shelf'
 const inter = Inter({ subsets: ['latin'] })
+import Counter from '../components/Counter'
+import SimpleCard from '../components/SimpleCard'
+import Row2Col from '../components/Row2Col'
+import Button from '../components/Button'
+import Link from 'next/link'
+
+
+
+
+
 
 export default function Home() {
+const [vitrine1,setVitrine1]=useState({
+  title:"Produção",
+  text:"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic ea voluptate magnam saepe tempora doloribus vero iure accusamus ut eligendi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sed deleniti asperiores totam soluta possimus pariatur incidunt itaque ad adipisci.",
+  image:"porconoabate.png",
+  cta:"Saiba mais"
+})
+const [vitrine2,setVitrine2]=useState({
+  title:"Inovação",
+  text:"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic ea voluptate magnam saepe tempora doloribus vero iure accusamus ut eligendi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sed deleniti asperiores totam soluta possimus pariatur incidunt itaque ad adipisci.",
+  image:"cientista.png",
+  cta:"Saiba mais"
+})
+const [vitrine3,setVitrine3]=useState({
+  title:"Criação",
+  text:"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic ea voluptate magnam saepe tempora doloribus vero iure accusamus ut eligendi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sed deleniti asperiores totam soluta possimus pariatur incidunt itaque ad adipisci.",
+  image:"usina.png",
+  cta:"Saiba mais"
+})
+
+const [citation,setCitation]=useState({
+  text:"Somos uma empresa dedicada a enriquecer a vida dos animais de estimação e seus donos. Descubra o que nos guia. Somos uma empresa dedicada a enriquecer a vida dos animais de estimação e seus donos. Descubra o que nos guia",
+  author:"Ricardo Andrade",
+  lead:"Empresa de Agro produtora de",
+  hilite:"Suínos, Ouvinos e Caprinos"
+})
+
+const [slides,setSlides]=useState([
+  {
+      image:"/porcos.png"
+  },
+  {
+      image:"/cabras.png"
+  },
+])
+
   return (
     <>
       <Head>
@@ -14,110 +64,100 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Navbar />
       <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>pages/index.tsx</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
-          </div>
-        </div>
 
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-          <div className={styles.thirteen}>
-            <Image
-              src="/thirteen.svg"
-              alt="13"
-              width={40}
-              height={31}
-              priority
-            />
-          </div>
-        </div>
+      <section>
+      <Slider slides={slides} interval={4000} />
+      </section>
 
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
+        <section className={styles.quemsomos}>
+         <Presentation lead={citation.lead} hilite={citation.hilite} author="Ricardo Andrade" text={citation.text}/>
+        </section> 
 
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
+        <section style={{backgroundColor:"#f7f7f7",paddingTop:'20px'}}>
+          <SectionDivider title='Equipe de' hilite='sucesso' />
+          <Shelf>
+            <img src="/agrocarne.png" width={158} alt="shelf" />
+            <img src="/inova.svg" width={158} alt="shelf" />
+            <img src="/ascobetania.svg" width={158} alt="shelf" />
+            <img src="/braza.svg" width={158} alt="shelf" />
+            <img src="/dicavalcante.svg" width={158} alt="shelf" />
+          </Shelf>
+        </section>
 
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
+        <section style={{marginBottom:'60px',marginTop:'20px'}}>
+          <Shelf>
+         <Counter end={50} duration={4} title='Tipos de cortes' text="Texto curto de contexto de até 3 linhas Texto curto de contexto de até 3 linhas" />
+         <Counter end={5} duration={3} title='Parceiros' text="Texto curto de contexto de até 3 linhas Texto curto de contexto de até 3 linhas" />
+         <Counter end={10} duration={4} title='Pontos Comerciais' text="Texto curto de contexto de até 3 linhas Texto curto de contexto de até 3 linhas" />
 
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
-        </div>
+          </Shelf>
+        </section>
+
+        <section>
+        <SectionDivider  title='Áreas de' hilite='atuação'/>
+         <Vitrine title={vitrine1.title} text={vitrine1.text} cta={vitrine1.cta} image={vitrine1.image}/>
+         <Vitrine reverse title={vitrine2.title} text={vitrine2.text} cta={vitrine2.cta} image={vitrine2.image}/>
+         <Vitrine title={vitrine3.title} text={vitrine3.text} cta={vitrine3.cta} image={vitrine3.image}/>
+        </section>
+         
+         {/* NOSSA HISTORIA */}
+         <section>
+         <SectionDivider title='Nossa' hilite='história' />
+         <Row2Col max={1400}>
+            <div style={{display:"flex",flexDirection:"column",alignItems:'flex-start',justifyContent:"space-between", padding:'40px'}}>
+              <h3 className={styles.title}>Sabe porquê a D’Corthes é &nbsp; <span className={styles.green}> muito mais do que cortes?</span> </h3>
+              <p style={{margin:'20px auto'}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas earum qui eius aperiam aspernatur nihil recusandae impedit magnam, tenetur vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis assumenda cum aliquid dolore ad atque, voluptas eum? Magnam, dolores necessitatibus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ut eum quos esse fugit amet et iure aliquam magni. Quam.</p>
+               <Button label="Saiba mais"/>
+            </div>
+            <div style={{borderRadius:'10px'}}>
+              <img alt="porco" width={'100%'} height='100%' className={styles.reponsiveImg} src="/porconoabate.png"  />
+            </div>
+         </Row2Col>
+
+         </section>
+
+        
+
       </main>
+      <footer className={styles.footer}>
+        <div className={styles.col4}>
+          <div className={styles.logo}> <div><img width={130} height={130} src='/logo.png' alt="logo" /></div> </div>
+
+
+          <div className={styles.empresa}>
+            <h4>D'corthes</h4>
+            <p>Empresa de Agro produtora de suínos, caprínos e ouvinos</p>
+          </div>
+
+
+          <div className={styles.links}>
+            <h4>Navegue</h4>
+            
+              <Link href="#">  Quem Somos</Link>
+              <Link href="#">Notícia</Link>
+              <Link href="#">Soluções</Link>
+              <Link href="#">Quem Somos</Link>
+              <Link href="#">Vídeos</Link>
+              <Link href="#">Contato</Link>
+            
+          </div>
+
+
+          <div className={styles.socials}>
+            <h4>Siga nas redes sociais</h4>
+            <div className={styles.medias}>
+            <div>
+            <img src="/face.svg" alt="" />
+            </div>
+            <div>
+            <img src="/insta.svg" alt="" />
+            </div>
+            </div>
+          </div>
+        </div>
+      </footer>
     </>
   )
 }

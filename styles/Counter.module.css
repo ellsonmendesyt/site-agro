@@ -1,0 +1,28 @@
+.counterContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid; */
+    max-width: 200px;
+    /* padding: 20px; */
+    text-align: center;
+}
+.counter{
+    font-family: 'Lato',sans-serif;
+    font-weight:700;
+    font-size: 40px;
+    color:#008037;
+}
+
+.title{
+    font-family: 'Lato',sans-serif;
+    font-size: 20px;
+    color:#0e0808;
+    font-weight:500;
+    margin-bottom: 10px;
+}
+.text{
+    font-family: 'Lato',sans-serif;
+    font-size: 14px;
+}

@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Work+Sans&display=swap');
+
+.sectionDivider{
+    display: flex;
+    align-items: center;
+     justify-content: center;
+    margin:50px auto 70px;
+
+  }
+  .title::after{
+    content:"-";
+    color:transparent;
+    display: inline-block;
+    background-color: green;
+  
+    position:absolute;
+    bottom:-15px;
+    border-radius: 7px;
+    left:35px;
+    right:35px;
+    height: 9px;
+
+  }
+  
+  .title{
+    position:relative;
+    display: inline-block;
+    text-align: center;
+    color:#5A5A5A;
+    font-weight: 500;
+    font-family: 'Lato',sans-serif;
+  }
+
+ 
+  .hilite{
+    font-family: "Lato",sans-serif;
+    color:#5A5A5A;
+    font-weight: 900;
+  }

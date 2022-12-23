@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+.navbar{
+    background-color: transparent;
+    /* border: 1px solid red; */
+    background-color: #fff;
+    padding: 30px 50px;
+    position:relative;
+    display: flex;
+    justify-content: right;
+}
+
+.logo{
+    width:140px;
+    height: 122px;
+}
+.navbarlist{
+ /* background: #000; */
+ color:#fff;
+ list-style: none;
+ display: flex;
+}
+
+.navbarlist li{
+    margin: 0px 10px;
+}
+.navLink {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    color:black;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 19px;
+    position: relative;
+    /* border: 1px solid; */
+    padding-bottom: 5px;
+    /* transition: .2s ease-in-out; */
+}
+
+.navLink:hover{
+    border-bottom: 4px solid #008037;
+    
+
+}
+.navLink:hover ~ .navLink::after{
+    content:'';
+    /* width:30px; */
+    background:#008037;
+    height: 2px;
+    position:absolute;
+    /* top:1px; */
+    left:1px;
+    right: 1px;
+    bottom: -7px;
+    height: 5px;
+}
+.logobox{
+    position:absolute;
+    top:0px;
+    left:80px;
+    /* border: 1px solid red; */
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 5px;
+    z-index: 1000;
+}
+
+.active{
+    color:#008037;
+}
