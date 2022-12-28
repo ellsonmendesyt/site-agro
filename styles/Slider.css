@@ -7,7 +7,7 @@
     align-items: center;
     /* border: 1px solid; */
     margin-bottom: 40px;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
     /* width:100%; */
 }
 
@@ -18,6 +18,7 @@
     position:absolute;
     opacity:0;
     transition: 2s ease;
+    height: 100%;
     /* border: 1px solid red; */
 }
 .slide.active{
@@ -29,47 +30,42 @@
     min-height: 400px;
     max-width: 100%;
     width:100%;
+    height: 100%;
     min-height: 300px; 
     object-fit: cover;
     object-position:center bottom ;
    
 }
 
-.right-arrow{
+.right-arrow,.left-arrow{
+
     position: absolute;
-    top: 50%;
-    right: 32px;
     font-size: 1rem;
     color:black;
     z-index: 10;
     cursor: pointer;
     user-select: none;
-    /* border-bottom-right-radius: 10px; */
-    background-color: transparent;
-    border-top: 4px solid #10b45748;
-    border-right: 4px solid #10b45748;
-    border-left:none;
-    border-bottom: none;
-    transform: rotate(30deg);
-    width:30px;
-    height: 30px;
-    padding: 10px;
-    transition: .2s ease-out;
-    /* border: #008037; */
+    background-color: rgba(211, 211, 211, 0.068);
+    color:rgba(128, 128, 128, 0.75);
+    font-size: 40px;
+    border:none;
+    height: 100%;
+    transition: all .2s ease-in;
 }
-.right-arrow:hover{
-    border-top: 4px solid #10b4574a;
-    border-right: 4px solid #10b4574a;
+
+.right-arrow{
+    top: 0px;
+    right: 0px;
 }
+
 .left-arrow{
     position: absolute;
-    top: 50%;
-    left: 32px;
-    font-size: 1rem;
-    color:black;
-    z-index: 10;
-    cursor: pointer;
-    user-select: none;
+    top: 0px;
+    left: 0px;
+}
+.left-arrow:hover,.right-arrow:hover{
+    color:rgba(128, 128, 128, 0.945);
+
 }
 
 

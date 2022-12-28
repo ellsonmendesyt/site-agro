@@ -40,7 +40,7 @@ useEffect(() => {
 
   return (
     <div className='slider-container'>
-        <button className='left-arrow' onClick={prev} >anterior</button>
+        <button className='left-arrow' onClick={prev} ><i className="fa fa-chevron-left"></i></button>
         {slides.map((slide,index)=>{
             return(
                 <div  key={index} className={index===current ? 'slide active': 'slide'}>
@@ -48,7 +48,7 @@ useEffect(() => {
                 </div>
             )
          })}
-        <button className='right-arrow' onClick={next}></button>
+        <button className='right-arrow' onClick={prev} ><i className="fa fa-chevron-right"></i></button>
     </div>
   )
 }

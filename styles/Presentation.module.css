@@ -58,6 +58,7 @@
 
   .lead{
     font-size: 50px;
+    font-size: calc(18px + (50 - 18) * ((100vw - 300px) / (1400 - 300)));
     font-family: 'Work Sans', sans-serif;
     max-width: 15ch;
   }
@@ -81,7 +82,8 @@
 
 .quoteauthor{
     text-transform: uppercase;
-    font-size: 28px;
+    /* font-size: 28px; */
+    font-size: calc(14px + (28 - 14) * ((100vw - 300px) / (1400 - 300)));
     line-height:32px;
     font-family: 'Lato',sans-serif;
     font-weight:700;

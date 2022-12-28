@@ -1,0 +1,57 @@
+.toggleOpen,.toggleClose{
+    z-index: 9999;
+     position:absolute;
+     right:10px;
+     top:10px;
+     z-index:999;
+     padding: 5px;
+     border: none;
+     display:block;
+     transform:scale(.5);
+     background-color: transparent;
+ }
+.line{
+    width: 50px;
+    height: 5px;
+    background-color: #4e3f3f;
+    /* background-color: black; */
+    display: block;
+    margin: 8px auto;
+    /* -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out; */
+    transition: all 0.2s ease-in-out;
+  }
+
+  .toggleOpen .line:nth-child(1){
+    -webkit-transform: translateY(13px) rotate(45deg);
+    -ms-transform: translateY(13px) rotate(45deg);
+    -o-transform: translateY(13px) rotate(45deg);
+    transform: translateY(13px) rotate(45deg);
+}
+
+.toggleOpen .line:nth-child(3){
+    -webkit-transform: translateY(-13px) rotate(-45deg);
+    -ms-transform: translateY(-13px) rotate(-45deg);
+    -o-transform: translateY(-13px) rotate(-45deg);
+    transform: translateY(-13px) rotate(-45deg);
+}
+.toggleOpen .line:nth-child(2){
+ opacity:0;
+}
+
+
+
+.x{
+    background-color: red;
+}
+
+.y{background-color: black;}
+
+
+
+ @media(min-width:760px){
+    .toggleOpen,.toggleClose{
+        /* display: none; */
+    }
+
+}
